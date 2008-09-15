@@ -1,0 +1,55 @@
+.banner {
+	text-align: center;
+	color: white;
+	margin: 0 0 10px 0;
+}
+
+.close_blast {
+	background-image: url(close_blast.png);
+	background-repeat: no-repeat;
+	background-position: 95%;
+}
+
+.banner h2 {
+	padding: 3px;
+	margin: 3px;
+}
+
+.banner h3 {
+	padding: 3px;
+	margin: 3px;
+	font-size: .8em;
+}
+
+.daily {
+	background-color: #333;
+}
+
+.at_will {
+	background: #619869;
+}
+
+.flavor_text {
+	font-size: .8em;
+	font-style: italic;
+	color: #222;
+}
+
+.type {
+	font-weight: bold;
+}
+
+.keywords {
+	font-weight: bold;
+	margin-left: 20px;
+}
+
+.cost {
+	font-weight: bold;
+}
+
+.targets {
+	font-weight: bold;
+	margin-left: 20px;
+}
+

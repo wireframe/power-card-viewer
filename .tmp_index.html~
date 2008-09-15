@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>DnD 4e Power Cards Index</title>
+<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<style type="text/css" media="screen">@import "iui/iui.css";</style>
+<style type="text/css" media="screen">@import "style.css";</style>
+<script type="application/x-javascript" src="iui/iui.js"></script>
+</head>
+
+<body>
+	 <div class="toolbar">
+        <h1 id="pageTitle">DnD 4e Power Cards Index</h1>
+        <a id="backButton" class="button" href="#"></a>
+        <a class="button" href="#searchForm">Search</a>
+    </div>
+
+    <ul id="classes" title="Classes" selected="true">
+        <li><a href="#Warlock">Warlock</a></li>
+        <li><a href="#Wizard">Wizard</a></li>
+        <li><a href="#Fighter">Fighter</a></li>
+        <li><a href="#Rouge">Rouge</a></li>
+        <li><a href="#Cleric">Cleric</a></li>
+    </ul>
+    <ul id="Warlock" title="Warlock">
+        <li><a href="#power">Eldrich Blast</a></li>
+    </ul>
+
+    <div id="power" class="panel" title="Power Card Viewer">
+    	<div class="banner daily close_blast">
+    	<h2>Eldrich Blast</h2>
+		<h3>Warlock Attack <span class="level">1</span></h3>
+    	</div>
+		
+		<span class="type">Daily</span>
+		<span class="keywords">Arcane, Cold</span>
+		
+		<br />
+
+		<span class="cost">Standard Action</span>
+		<span class="targets">Personal</span>
+		
+		<p class="effect">You gain temporary hit points equal to 10 + your Intelligence modifier. Until the end of the encounter, an enemy that starts its turn adjacent to you takes 1d6 + Constitution modifier cold damage.</p>
+		
+		<p class="flavor_text">You surround yourself in a sheath of black ice from a dark and doleful realm. It protects you from attack and radiates fierce cold.</p>
+    </div>
+
+    <div id="searchResults" class="panel" title="Search">
+        <h2>Search results go here...</h2>
+    </div>
+    <form id="searchForm" class="dialog" action="#searchResults">
+        <fieldset>
+            <h1>Power Search</h1>
+            <a class="button toolButton goButton" href="#searchResults">Search</a>
+            
+            <label>Name:</label>
+            <input type="text"/>
+        </fieldset>
+    </form>
+</body>
+</html>
