@@ -1,0 +1,11 @@
+.svn
+log/*.log
+log/*.pid
+index/*
+*.orig
+public/assets
+.DS_Store
+db/schema.rb
+tmp
+coverage
+public/stylesheets/*.css
