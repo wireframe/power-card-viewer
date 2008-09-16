@@ -4,8 +4,8 @@
 	margin: 0 0 10px 0;
 }
 
-.close_blast {
-	background-image: url(close_blast.png);
+.blast {
+	background-image: url(images/blast.png);
 	background-repeat: no-repeat;
 	background-position: 95%;
 }
