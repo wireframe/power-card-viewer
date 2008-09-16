@@ -1,0 +1,15 @@
+The power card viewer application is an app for browsing and viewing information for 
+DnD 4th edition power cards.
+
+This application is *heavily* inspired by the fabulous fan made content for printable 
+power cards.  The primary difference is that this application won't make little baby 
+bunnies cry for printing pages and pages of power cards.
+
+h2. Setup
+
+Currently runs on the Aptana iPhone Emulator
+
+* install Aptana w/ iPhone extensions
+* open the project and flip to the iPhone Emulator display
+
+
