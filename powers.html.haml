@@ -1,0 +1,91 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title
+      DnD 4e Power Cards Index
+    %meta{ :name => "viewport", :content => "width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" }/
+    %style{ :type => "text/css", :media => "screen" }
+      @import "iui/iui.css";
+    %style{ :type => "text/css", :media => "screen" }
+      @import "style.css";
+    %script{ :type => "application/x-javascript", :src => "iui/iui.js" }
+  %body
+    .toolbar
+      %h1#pageTitle
+        DnD 4e Power Cards Index
+      %a#backButton.button{ :href => "#" }/
+      %a.button{ :href => "#searchForm" }
+        Search
+    %ul#classes{ :title => "Categories", :selected => "true" }
+      %li.group Class Powers
+      - class_categories.each do |category|
+        %li
+          %a{ :href => "#category_#{category.gsub("\s",'')}"}= category
+      %li.group Other
+      - other_categories.each do |category|
+        %li
+          %a{ :href => "#category_#{category.gsub("\s",'')}"}= category
+
+
+    - (class_categories + other_categories).each do |category|
+      %ul{:id => "category_#{category.gsub("\s",'')}", :title => category}
+        - powers.select {|p| p[:category] == category}.group_by {|p| p[:level]}.each do |level,level_powers|
+          %li.group= level
+          - level_powers.each do |power|
+            %li
+              %a{:href => "#power_#{power[:id]}"}= power[:name]
+    
+    - powers.each do |power|
+      .panel{:id => "power_#{power[:id]}", :title => "Power Card Viewer"}
+        - frequency_class = ""
+        - frequency_class = 'daily' if power[:frequency_of_use] =~ /Daily/
+        - frequency_class = 'at_will' if power[:frequency_of_use] =~ /Will/
+        - frequency_class = 'encounter' if power[:frequency_of_use] =~ /Encounter/
+        - frequency_class = 'at_will' if frequency_class.empty?
+        
+        - range_class = ""
+        - range_class = 'personal' if power[:range] =~ /Personal/
+        - range_class = 'blast' if power[:range] =~ /Blast/
+        - range_class = 'burst' if power[:range] =~ /Burst/
+        .banner{:class => "#{frequency_class} #{range_class}"}
+          %h2= power[:name]
+          %h3
+            - type_and_level = power[:level].split("\s")
+            - level = nil
+            - level = type_and_level.pop if type_and_level.last =~ /^(0-9)+$/
+            = type_and_level.join(" ")
+            - unless level.nil?
+              %span
+                = level
+        %span.type
+          = power[:frequency_of_use]
+        %span.keywords
+          = power[:keywords].join(", ")
+        %br/
+        %span.cost
+          = power[:action]
+        %span.targets
+          = power[:range]
+        - power[:attributes].each do |attr|
+          %p.effect
+            - type_and_value = attr.split(":")
+            - if type_and_value.size > 1
+              = "<b>#{type_and_value.slice!(0)}</b>:"
+              = type_and_value.join(" ")
+            - else
+              = attr
+        %p.flavor_text
+          = power[:flavor_text]
+
+    #searchResults.panel{ :title => "Search" }
+      %h2
+        Search results go here...
+    %form#searchForm.dialog{ :action => "#searchResults" }
+      %fieldset
+        %h1
+          Power Search
+        %a.button.toolButton.goButton{ :href => "#searchResults" }
+          Search
+        %label
+          Name:
+        %input{ :type => "text" }/
