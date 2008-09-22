@@ -12,4 +12,4 @@ other_categories = ['Epic', 'Feat', 'Racial']
 
 engine = Haml::Engine.new(File.read('powers.html.haml'))
 
-File.open('../power-card-viewer/powers.html', 'w') { |f| f << engine.render(Object.new, :powers => powers, :class_categories => class_categories, :other_categories => other_categories) }
+File.open('index.html', 'w') { |f| f << engine.render(Object.new, :powers => powers, :class_categories => class_categories, :other_categories => other_categories) }
