@@ -28,8 +28,21 @@ class MainHandler(webapp.RequestHandler):
     self.response.out.write(template.render(path, template_values))
 
 
+class SearchHandler(webapp.RequestHandler):
+
+  def get(self):
+    query = self.request.get('q')
+
+    self.response.out.write("<h2>Search results will go here</h2>")
+
+      # query = search.SearchableQuery('Person')
+      # query.Search(keyword)
+      # for result in query.Run():
+      #    self.response.out.write('%s' % result['email'])
+
 def main():
-  application = webapp.WSGIApplication([('/', MainHandler)],
+  application = webapp.WSGIApplication([('/', MainHandler),
+                                       ('/search', SearchHandler)],
                                        debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 

@@ -29578,18 +29578,15 @@
         Search results go here...
       </h2>
     </div>
-    <form action='#searchResults' class='dialog' id='searchForm'>
+    <form id="searchForm" class="dialog" action="/search" method="GET">
       <fieldset>
         <h1>
           Power Search
         </h1>
-        <a class='button toolButton goButton' href='#searchResults'>
-          Search
-        </a>
-        <label>
-          Name:
-        </label>
-        <input type='text' />
+        <a class="button leftButton" type="cancel">Cancel</a>
+        <a class="button blueButton" type="submit">Search</a>
+        <label>Keywords:</label>
+        <input type='text' name = 'q' />
       </fieldset>
     </form>
   </body>
