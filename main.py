@@ -15,9 +15,9 @@
 # limitations under the License.
 #
 
+import os
 import wsgiref.handlers
 from google.appengine.ext import webapp
-import os
 from google.appengine.ext.webapp import template
 
 class MainHandler(webapp.RequestHandler):
